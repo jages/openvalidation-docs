@@ -176,7 +176,7 @@ java -jar openvalidation.jar ^
      -r   "IF the name IS Hello THEN Hello openVALIDATION!" ^
      -s   "{name:'String'}" ^
      -c   "en" ^
-     -o   C:\tmp\nodeservice\expressVALIDATION.js ^
+     -o   "C:\tmp\nodeservice\expressVALIDATION.js" ^
      -l   node
 ```
 {% endtab %}
@@ -184,9 +184,9 @@ java -jar openvalidation.jar ^
 {% tab title="Unix" %}
 ```bash
 java -jar openvalidation.jar \
-     -r   "IF the Name IS Hallo THEN Hallo openVALIDATION!" \
-     -s   "{Name:'String'}" \
-     -o   C:\tmp\nodeservice\expressVALIDATION.js \
+     -r   "IF the name IS Hallo THEN Hallo openVALIDATION!" \
+     -s   "{name:'String'}" \
+     -o   "C:\tmp\nodeservice\expressVALIDATION.js" \
      -l   node
 ```
 {% endtab %}
@@ -241,14 +241,14 @@ We start Postman and create the corresponding POST request:
 {% tabs %}
 {% tab title="YAML" %}
 ```yaml
-Name : Hello
+name : Hello
 ```
 {% endtab %}
 
 {% tab title="JSON" %}
 ```javascript
 {
-	"Name" : "Hello"
+	"name" : "Hello"
 }
 ```
 {% endtab %}
@@ -258,7 +258,7 @@ And this is how the request and the corresponding response look like in Postman:
 
 ![](.gitbook/assets/postman.PNG)
 
-If we set the value of the `Name`attribute to "**Hallo**", the corresponding error message is displayed in the response as required. If we change the value, the error message no longer appears. Congratulations, you have just implemented your first validation rule!
+If we set the value of the `name`attribute to "**Hallo**", the corresponding error message is displayed in the response as required. If we change the value, the error message no longer appears. Congratulations, you have just implemented your first validation rule!
 
 
 
@@ -270,7 +270,7 @@ Let's look again at the process by which we generated our validation rule via th
 
 ```bash
 java -jar openvalidation.jar ^
-     -r   "IF the Name IS Hello THEN Hello openVALIDATION!" ^
+     -r   "IF the name IS Hello THEN Hello openVALIDATION!" ^
      -s   "{Name:'String'}"
 ```
 
@@ -279,7 +279,7 @@ into a separate file. In e.g. myDomainRules.ov
 {% code-tabs %}
 {% code-tabs-item title="myDomainRules.ov" %}
 ```coffeescript
-  IF the Name IS Hello 
+  IF the name IS Hello 
 THEN Hello openVALIDATION!
 ```
 {% endcode-tabs-item %}
